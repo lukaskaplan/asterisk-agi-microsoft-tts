@@ -1,4 +1,4 @@
-# asterisk-agi-azure-tts
+# asterisk-agi-microsoft-tts
 
 Microsoft Text-to-Speech (TTS) AGI Script for Asterisk
 
