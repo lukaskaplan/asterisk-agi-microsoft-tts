@@ -1,5 +1,7 @@
 # asterisk-agi-microsoft-tts
 
+[![Lint](https://github.com/lukaskaplan/asterisk-agi-microsoft-tts/actions/workflows/lint.yml/badge.svg)](https://github.com/lukaskaplan/asterisk-agi-microsoft-tts/actions/workflows/lint.yml)
+
 Microsoft Text-to-Speech (TTS) AGI Script for Asterisk
 
 This script converts text to speech using **Microsoft Azure TTS** and saves the output as a **WAV file (8kHz, mono PCM)**, making it ideal for use with **Asterisk AGI**.
