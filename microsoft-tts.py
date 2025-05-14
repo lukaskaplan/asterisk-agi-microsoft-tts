@@ -6,8 +6,8 @@ Author: Lukas Kaplan
 GitHub: https://github.com/lukaskaplan/asterisk-agi-microsoft-tts
 License: MIT
 
-This script converts text to speech using Microsoft Azure TTS and saves the output as a WAV file (8kHz, mono PCM).
-It is optimized for use as an AGI script in Asterisk.
+This script converts text to speech using Microsoft Azure TTS and saves the output
+as a WAV file (8kHz, mono PCM). It is optimized for use as an AGI script in Asterisk.
 
 Usage (in Asterisk dialplan):
     same => n,AGI(microsoft-tts.py,"Text to synthesize","/path/to/output.wav")
@@ -18,13 +18,16 @@ Requirements:
 """
 
 import sys
-import requests
 import os
+import requests
 
 # Configuration
 DEFAULT_API_KEY = None  # Replace with your API key if necessary, but using env var is recommended
 API_KEY = os.getenv("MICROSOFT_TTS_API_KEY", DEFAULT_API_KEY)
-TTS_URL = os.getenv("MICROSOFT_TTS_API_URL", "https://westeurope.tts.speech.microsoft.com/cognitiveservices/v1")
+TTS_URL = os.getenv(
+    "MICROSOFT_TTS_API_URL",
+    "https://westeurope.tts.speech.microsoft.com/cognitiveservices/v1"
+)
 VOICE_NAME = "cs-CZ-VlastaNeural"  # Change voice as needed
 AUDIO_FORMAT = "riff-8khz-16bit-mono-pcm"  # Format suitable for Asterisk
 
@@ -58,7 +61,12 @@ def synthesize_speech(text: str, output_file: str):
     }
 
     try:
-        response = requests.post(TTS_URL, headers=headers, data=ssml_payload.encode("utf-8"), timeout=5)
+        response = requests.post(
+            TTS_URL,
+            headers=headers,
+            data=ssml_payload.encode("utf-8"),
+            timeout=5
+        )
         if response.status_code == 200:
             with open(output_file, "wb") as f:
                 f.write(response.content)
