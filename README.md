@@ -23,7 +23,7 @@ This script converts text to speech using **Microsoft Azure TTS** and saves the 
 ### Install dependencies
 
 ```sh
-pip install requests
+pip install -r requirements.txt
 ```
 
 ## Usage
