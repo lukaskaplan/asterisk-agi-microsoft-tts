@@ -47,7 +47,7 @@ DEFAULT_API_KEY = "your-microsoft-api-key"
 ### 2️⃣ Run the script manually
 
 ```sh
-python microsoft-tts.py "Hello, this is a test" /path/to/output.wav
+python microsoft_tts.py "Hello, this is a test" /path/to/output.wav
 ```
 
 ### 3️⃣ Use as an Asterisk AGI Script
@@ -55,15 +55,15 @@ python microsoft-tts.py "Hello, this is a test" /path/to/output.wav
 #### Copy the script to Asterisk AGI directory:
 
 ```sh
-cp microsoft-tts.py /var/lib/asterisk/agi-bin/microsoft-tts.py
-chmod +x /var/lib/asterisk/agi-bin/microsoft-tts.py
+cp microsoft_tts.py /var/lib/asterisk/agi-bin/microsoft_tts.py
+chmod +x /var/lib/asterisk/agi-bin/microsoft_tts.py
 ```
 
 #### Example Asterisk Dialplan (extensions.conf):
 
 ```asterisk
 exten => 1234,1,Answer()
-same  => n,AGI(microsoft-tts.py,"Hello, welcome to our system","/var/lib/asterisk/sounds/custom/greeting.wav")
+same  => n,AGI(microsoft_tts.py,"Hello, welcome to our system","/var/lib/asterisk/sounds/custom/greeting.wav")
 same  => n,Playback(custom/greeting)
 same  => n,Hangup()
 ```
