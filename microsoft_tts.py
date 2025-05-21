@@ -10,7 +10,7 @@ This script converts text to speech using Microsoft Azure TTS and saves the outp
 as a WAV file (8kHz, mono PCM). It is optimized for use as an AGI script in Asterisk.
 
 Usage (in Asterisk dialplan):
-    same => n,AGI(microsoft-tts.py,"Text to synthesize","/path/to/output.wav")
+    same => n,AGI(microsoft_tts.py,"Text to synthesize","/path/to/output.wav")
 
 Requirements:
     - requests (pip install requests)
